@@ -1,0 +1,1 @@
+- é necessário endereços ipv6 em interfaces loopback para dar setup a peering iBGP?
