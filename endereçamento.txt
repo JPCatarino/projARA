@@ -1,0 +1,28 @@
+*** Loopback Interfaces for iBGP Peering ***
+
+    Porto  - 10.0.0.1/32 | *
+    Lisboa - 10.0.0.2/32 | * 
+    Aveiro - 10.0.0.3/32 | * 
+    Oeiras - 10.0.0.4/32 | *
+
+* Is ipv6 needed? 
+********************************************
+
+*** Datacenters ***
+
+    *** Datacenter Porto ***
+
+        Main   - 192.100.5.0/25   | 2001:0100:0005::/49
+        Backup - 192.100.5.128/25 | 2001:0100:0005:8000::/49	
+
+    *** Datacenter Aveiro *** 
+
+        Main - 192.100.3.0/24 | 2001:100:3::/48
+    
+    *** Datacenter Lisboa ***
+
+        Main - 192.100.2.0/24 | 2001:100:2::/48
+
+    *** Datacenter Faro ***
+
+        Main - 192.100.4.0/24 | 2001:100:4::/48
