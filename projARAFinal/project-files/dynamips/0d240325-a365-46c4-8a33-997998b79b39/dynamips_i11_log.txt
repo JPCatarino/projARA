@@ -1,0 +1,25 @@
+Dec 06 16:44:41.148 HYPERVISOR: Release 0.2.17-x86/Windows (tag 2017072410)
+Dec 06 16:44:41.149 HYPERVISOR: Started on IP = 127.0.0.1, TCP port = 51057.
+Dec 06 16:44:41.629 HYPERVISOR: exec_cmd: hypervisor version 
+Dec 06 16:44:41.630 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\Media Markt\Desktop\projARA\projARAFinal\project-files\dynamips 
+Dec 06 16:44:41.630 GENERAL: working_dir=C:\Users\Media Markt\Desktop\projARA\projARAFinal\project-files\dynamips
+Dec 06 16:44:41.630 HYPERVISOR: exec_cmd: ethsw create EthCore 
+Dec 06 17:31:17.503 HYPERVISOR: exec_cmd: nio create_udp udp-f39d3abc-8df8-43fe-9c64-acb48f35d80a 10005 127.0.0.1 10004 
+Dec 06 17:31:17.505 HYPERVISOR: exec_cmd: ethsw add_nio EthCore udp-f39d3abc-8df8-43fe-9c64-acb48f35d80a 
+Dec 06 17:31:17.514 HYPERVISOR: exec_cmd: ethsw set_access_port EthCore udp-f39d3abc-8df8-43fe-9c64-acb48f35d80a 1 
+Dec 06 17:31:25.877 HYPERVISOR: exec_cmd: nio create_udp udp-4cd4c55d-7be2-4d2e-8dfd-d8c250373891 10006 127.0.0.1 10007 
+Dec 06 17:31:25.877 HYPERVISOR: exec_cmd: ethsw add_nio EthCore udp-4cd4c55d-7be2-4d2e-8dfd-d8c250373891 
+Dec 06 17:31:25.887 HYPERVISOR: exec_cmd: ethsw set_access_port EthCore udp-4cd4c55d-7be2-4d2e-8dfd-d8c250373891 1 
+Dec 06 17:31:55.676 HYPERVISOR: exec_cmd: nio create_udp udp-de931b1a-ccec-410b-9ee8-afc260bf7f51 10011 127.0.0.1 10010 
+Dec 06 17:31:55.677 HYPERVISOR: exec_cmd: ethsw add_nio EthCore udp-de931b1a-ccec-410b-9ee8-afc260bf7f51 
+Dec 06 17:31:55.691 HYPERVISOR: exec_cmd: ethsw set_access_port EthCore udp-de931b1a-ccec-410b-9ee8-afc260bf7f51 1 
+Dec 06 17:32:03.754 HYPERVISOR: exec_cmd: nio create_udp udp-6cc0132f-24bc-4ecb-b1cb-6df3bfe92454 10014 127.0.0.1 10015 
+Dec 06 17:32:03.754 HYPERVISOR: exec_cmd: ethsw add_nio EthCore udp-6cc0132f-24bc-4ecb-b1cb-6df3bfe92454 
+Dec 06 17:32:03.762 HYPERVISOR: exec_cmd: ethsw set_access_port EthCore udp-6cc0132f-24bc-4ecb-b1cb-6df3bfe92454 1 
+Dec 06 17:32:09.170 HYPERVISOR: exec_cmd: nio create_udp udp-221a7856-7971-4064-bfb9-2fcfedda7b1d 10018 127.0.0.1 10019 
+Dec 06 17:32:09.170 HYPERVISOR: exec_cmd: ethsw add_nio EthCore udp-221a7856-7971-4064-bfb9-2fcfedda7b1d 
+Dec 06 17:32:09.175 HYPERVISOR: exec_cmd: ethsw set_access_port EthCore udp-221a7856-7971-4064-bfb9-2fcfedda7b1d 1 
+Dec 06 17:48:07.016 HYPERVISOR: exec_cmd: ethsw delete EthCore 
+Dec 06 17:48:07.119 HYPERVISOR: exec_cmd: hypervisor stop 
+Dec 06 17:48:07.534 HYPERVISOR: Stopped.
+Dec 06 17:48:07.534 GENERAL: reset done.
