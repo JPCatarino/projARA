@@ -13,7 +13,7 @@ ipv6 unicast-routing
     *** F0/0 ***
         conf t
         interface F0/0
-        ip address 192.100.1.1 255.255.255.0
+        ip address 192.100.1.1 255.255.255.240
         no shut
     
     *** F1/0 ***
@@ -25,23 +25,27 @@ ipv6 unicast-routing
 
 
 *** BGP Process ***
+    *** eBGP ***
+        conf t      
+        router bgp 1000
+        address-family ipv4 unicast 
+        neighbor 4.4.4.x remote-as 2000
+        neighbor x.x.x.x remote-as 65000
+        neighbor x.x.x.x remove-private-as
 
-    conf t      
-    router bgp 1000
-    address-family ipv4 unicast 
-    neighbor 4.4.4.x remote-as 2000
-    neighbor x.x.x.x remote-as 65000
-    neighbor 10.255.255.234 remote-as 1000
-    neighbor 10.255.255.238 remote-as 1000
-    neighbor 10.255.255.242 remote-as 1000
-    neighbor x.x.x.x remove-private-as
+    *** iBGP ***
+        conf t 
+        router bgp 1000
+        address-family ipv4 unicast
+        neighbor 10.255.255.234 remote-as 1000
+        neighbor 10.255.255.234 next-hop-self
 
 *** OSPF Processes ***
 
     conf t
     router ospf 1000
     network 192.100.1.0 0.0.0.255 area 0
-    network 10.0.0.1 0.0.0.0 area 0 
+    network 192.100.1.252 0.0.0.0 area 0
     redistribute bgp 1000
 
 *** Tunnels ***

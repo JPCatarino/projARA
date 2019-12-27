@@ -9,6 +9,12 @@ ipv6 unicast-routing
         interface Loopback0
         ip address 192.100.1.253 255.255.255.255
         no shut
+    
+    *** F0/0 ***
+        conf t
+        interface F0/0
+        ip address 192.100.1.2 255.255.255.240
+        no shut
 
     *** F0/1 ***
         conf t
@@ -27,18 +33,27 @@ ipv6 unicast-routing
 
 *** BGP Process ***
 
-    conf t      
-    router bgp 1000
-    address-family ipv4 unicast 
-    neighbor 4.4.4.x remote-as 2000
+    *** Ext ***
+        conf t      
+        router bgp 1000
+        address-family ipv4 unicast 
+        neighbor 4.4.4.x remote-as 2000
+    
+    *** iBGP ***
+        conf t 
+        router bgp 1000
+        address-family ipv4 unicast
+        neighbor 10.255.255.233 remote-as 1000
+        neighbor 10.255.255.233 next-hop-self
+
 
 *** OSPF Processes ***
 
     conf t
     router ospf 1000
-    network 193.100.1.0 0.0.0.255     area 0
-    network 192.100.2.0 0.0.0.255     area 0
-    network 10.0.0.2    0.0.0.0       area 0 
+    network 193.100.1.0     0.0.0.255     area 0
+    network 192.100.2.0     0.0.0.255     area 0
+    network 192.100.1.253   0.0.0.0       area 0 
     redistribute bgp 1000
 
 *** Non-transit AS config *** 
@@ -57,3 +72,12 @@ NOTE: This may be used for every AS1000 Border router.
     route-map lisboa-out permit 20
     match route-type external
     set community 1000:2
+
+
+*** Tunnels ***
+    conf t
+    interface Tunnel 0
+    ip address 10.255.255.234 255.255.255.252
+    tunnel source Loopback 0
+    tunnel destination 192.100.1.252
+    tunnel mode ipip
