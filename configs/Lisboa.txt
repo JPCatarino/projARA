@@ -43,3 +43,10 @@ NOTE: This may be used for every AS1000 Border router.
     router bgp 1000
     address-family ipv4 unicast
     neighbor MADRID_PEERINGLINK route-map routes-out out
+
+*** Communities for routing constrains *** 
+    conf t
+    ip bgp-community new-format 
+    route-map lisboa-out permit 20
+    match route-type external
+    set community 1000:2
