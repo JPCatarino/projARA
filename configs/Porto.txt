@@ -9,6 +9,13 @@ ipv6 unicast-routing
         interface Loopback0
         ip address 10.0.0.1 255.255.255.255
         no shut
+    
+    *** F1/0 ***
+        conf t
+        interface F1/0
+        ip address 4.4.4.1 255.255.240
+        ipv6 address 2001:4:4::1/62
+        no shut
 
 
 *** BGP Process ***

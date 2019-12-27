@@ -10,6 +10,13 @@ ipv6 unicast-routing
         ip address 10.0.0.2 255.255.255.255
         no shut
 
+        *** F1/0 ***
+        conf t
+        interface F1/0
+        ip address 4.4.4.33 255.255.240
+        ipv6 address 2001:4:4:8::1/62
+        no shut
+
 
 *** BGP Process ***
 

@@ -48,9 +48,16 @@
 *** External BGP peering links ***
 	4.4.4.0/26 para ser dividida em /28 (4*16, vamos usar 3)
 
-    Porto <-> Vigo - 4.4.4.0/28
-    Vigo <-> Madrid - 4.4.4.16/28
-    Madrid <-> Lisboa - 4.4.4.32/28
+    ** IPV4 ***
+        Porto <-> Vigo - 4.4.4.0/28
+        Vigo <-> Madrid - 4.4.4.16/28
+        Madrid <-> Lisboa - 4.4.4.32/28
+    
+    ** IPV6 ***
+        Porto <-> Vigo - 2001:4:4::/62
+        Vigo <-> Madrid - 2001:4:4:4::/62
+        Madrid <-> Lisboa - 2001:4:4:8::/62
+ 
 
 
 
