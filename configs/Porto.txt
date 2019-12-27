@@ -64,7 +64,7 @@ ipv6 unicast-routing
 *** Non-transit AS config *** 
 NOTE: This may be used for every AS1000 Border router.
 
-    ip as-path access-lsit 1 permit ^$
+    ip as-path access-list 1 permit ^$
     route-map routes-out
     match as-path 1 
     router bgp 1000
