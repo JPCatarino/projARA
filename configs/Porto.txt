@@ -1,23 +1,102 @@
+*** General Configs***
+conf t 
+ipv6 unicast-routing
+
 *** Interfaces *** 
 
     *** Loopback0 ***
         conf t 
         interface Loopback0
-        ip address 10.0.0.1 255.255.255.255
+        ip address 192.100.1.252 255.255.255.255
+        no shut
+    
+    *** F0/0 ***
+        conf t
+        interface F0/0
+        ip address 192.100.1.1 255.255.255.240
+        no shut
+    
+    *** F1/0 ***
+        conf t
+        interface F1/0
+        ip address 4.4.4.1 255.255.240
+        ipv6 address 2001:4:4::1/62
         no shut
 
 
 *** BGP Process ***
+    *** eBGP ***
+        conf t      
+        router bgp 1000
+        address-family ipv4 unicast 
+        neighbor 4.4.4.x remote-as 2000
+        neighbor x.x.x.x remote-as 65000
+        neighbor x.x.x.x remove-private-as
 
-    conf t      
-    router bgp 1000
+    *** iBGP ***
+        conf t 
+        router bgp 1000
+        address-family ipv4 unicast
+        neighbor 10.255.255.234 remote-as 1000
+        neighbor 10.255.255.234 next-hop-self
 
 *** OSPF Processes ***
 
     conf t
     router ospf 1000
-    network 10.0.0.0    0.255.255.255 area 0 
-    network 193.100.2.0 0.0.0.255     area 0
-    network 192.100.3.0 0.0.0.255     area 0
-    network 192.100.4.0 0.0.0.255     area 0
-    netowrk 192.100.5.0 0.0.0.255     area 0
+    network 192.100.1.0 0.0.0.255 area 0
+    network 192.100.1.252 0.0.0.0 area 0
+    redistribute bgp 1000
+
+*** Tunnels ***
+    conf t
+    interface Tunnel 0
+    ip address 10.255.255.233 255.255.255.252
+    tunnel source Loopback 0
+    tunnel destination 192.100.1.253
+    tunnel mode ipip
+    interface Tunnel 1
+    ip address 10.255.255.237 255.255.255.252
+    tunnel source Loopback 0
+    tunnel destination 192.100.1.254
+    tunnel mode ipip
+    interface Tunnel 2
+    ip address 10.255.255.241 255.255.255.252
+    tunnel source Loopback 0
+    tunnel destination 192.100.1.255
+    tunnel mode ipip    
+
+*** Non-transit AS config *** 
+NOTE: This may be used for every AS1000 Border router.
+
+    conf t
+    ip as-path access-list 1 permit ^$
+    route-map routes-out
+    match as-path 1 
+    router bgp 1000
+    address-family ipv4 unicast
+    neighbor VIGO_PEERINGLINK route-map routes-out out
+
+*** Interior routing constrains *** 
+NOTE: This may be used for every AS1000 border router.
+Has to be set in
+    
+    conf t
+    ip as-path access-list ES2 permit 3000
+    ip as-path access-list noES2 permit ^(?!3000).*$
+    route-map inRoutes
+    route-map map-preference
+    match as-path ES2 
+    set local-preference 200
+    match as-path noES2
+    set local-preference 100
+
+*** Communities for routing constrains *** 
+    conf t
+    ip bgp-community new-format 
+    route-map porto-out permit 20
+    match route-type external
+    set community 1000:1
+    router bgp 1000
+    neighbor x.x.x.x route-map porto-out out
+    neighbor x.x.x.x send-community

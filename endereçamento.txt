@@ -1,9 +1,17 @@
 *** Loopback Interfaces for iBGP Peering ***
 
-    Porto  - 10.0.0.1/32 | *
-    Lisboa - 10.0.0.2/32 | * 
-    Aveiro - 10.0.0.3/32 | * 
-    Oeiras - 10.0.0.4/32 | *
+    Porto  - 192.100.1.252/32 | *
+    Lisboa - 192.100.1.253/32 | * 
+    Aveiro - 192.100.1.254/32 | * 
+    Oeiras - 192.100.1.255/32 | *
+
+*** Tunnels Overlay Addresses for iBGP ***
+    Porto <-> Lisboa - 10.255.255.232/30
+    Porto <-> Aveiro - 10.255.255.236/30
+    Porto <-> Oeiras - 10.255.255.240/30
+    Lisboa <-> Aveiro - 10.255.255.244/30
+    Lisboa <-> Oeiras - 10.255.255.248/30
+    Aveiro <-> Oeiras - 10.255.255.252/30
 
 * Is ipv6 needed? 
 ********************************************
@@ -49,6 +57,17 @@
 
 *** External BGP peering links ***
 	4.4.4.0/26 para ser dividida em /28 (4*16, vamos usar 3)
+
+    ** IPV4 ***
+        Porto <-> Vigo - 4.4.4.0/28
+        Vigo <-> Madrid - 4.4.4.16/28
+        Madrid <-> Lisboa - 4.4.4.32/28
+    
+    ** IPV6 ***
+        Porto <-> Vigo - 2001:4:4::/62
+        Vigo <-> Madrid - 2001:4:4:4::/62
+        Madrid <-> Lisboa - 2001:4:4:8::/62
+ 
 
 
 

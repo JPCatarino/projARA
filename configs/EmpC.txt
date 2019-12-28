@@ -1,0 +1,32 @@
+*** General Configs***
+conf t 
+ipv6 unicast-routing
+
+*** Interfaces *** 
+    
+    *** F0/0 ***
+        conf t
+        interface F0/0
+        ip address 
+        ipv6 address
+        no shut
+    
+    *** F1/0 ***
+        conf t
+        interface F1/0
+        ip address 110.3.1.254 255.255.255.0
+        ipv6 address 3001:31::31/48
+        no shut
+
+*** BGP Process ***
+    
+    conf t      
+    router bgp 65000
+    address-family ipv4 unicast 
+
+*** OSPF Processes ***
+
+    conf t
+    router ospf 65000
+    network 110.3.1.0 0.0.0.255 area 0
+    redistribute bgp 1000
