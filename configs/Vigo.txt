@@ -1,0 +1,9 @@
+*** Interfaces *** 
+
+
+
+
+*** BGP Process ***
+
+    conf t      
+    router bgp 2000
