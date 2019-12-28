@@ -1,0 +1,17 @@
+*** Interfaces *** 
+//incomplete
+
+*** F0/0 *** (Porto)
+        conf t
+        interface F0/0
+	ip address ??
+	ip address ??
+	no shut
+	end
+	write
+
+*** BGP Process *** *** eBGP ***
+        conf t      
+        router bgp 65000
+        address-family ipv4 unicast 
+        neighbor PORTO remote-as 1000

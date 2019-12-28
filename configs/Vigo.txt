@@ -1,9 +1,50 @@
 *** Interfaces *** 
 
 
+*** F0/0 *** (Porto)
+        conf t
+        interface F0/0
+	ip address 4.4.4.2 255.255.240
+	ip address 2001:4:4::2/62
+	no shut
+	end
+	write
+
+todo internet core (f0/1)
 
 
-*** BGP Process ***
+
+*** F1/0 *** (NETX1)
+        conf t
+        interface F1/0
+	ip address 200.100.1.10 255.255.255.0
+	ip address 2201:200:100::10/48
+	no shut
+	end
+	write
+
+*** F1/1 *** (NETX2)
+        conf t
+        interface F1/1
+	ip address 200.200.1.10 255.255.255.0
+	ip address 2201:200:200::10/48
+	no shut
+	end
+	write
+
+*** F2/0 *** (Madrid)
+        conf t
+        interface F2/0
+	ip address 4.4.4.20 255.255.255.240
+	ip address 2001:4:4:4::10/62
+	no shut
+	end
+	write
+
+
+*** BGP Process *** *** eBGP ***
 
     conf t      
     router bgp 2000
+    address-family ipv4 unicast
+    neighbor 4.4.4.1 remote-as 1000		

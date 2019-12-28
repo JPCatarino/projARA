@@ -37,7 +37,7 @@ ipv6 unicast-routing
         conf t      
         router bgp 1000
         address-family ipv4 unicast 
-        neighbor 4.4.4.x remote-as 2000
+        neighbor 4.4.4.34 remote-as 2000
     
     *** iBGP ***
         conf t 

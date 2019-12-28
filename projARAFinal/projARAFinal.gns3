@@ -918,6 +918,37 @@
                     }
                 ],
                 "suspend": false
+            },
+            {
+                "filters": {},
+                "link_id": "0873a915-e7bf-4735-bf21-aaa21c530127",
+                "nodes": [
+                    {
+                        "adapter_number": 2,
+                        "label": {
+                            "rotation": 0,
+                            "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
+                            "text": "f2/0",
+                            "x": 32,
+                            "y": 61
+                        },
+                        "node_id": "0d240325-a365-46c4-8a33-997998b79b39",
+                        "port_number": 0
+                    },
+                    {
+                        "adapter_number": 2,
+                        "label": {
+                            "rotation": 0,
+                            "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
+                            "text": "f2/0",
+                            "x": 33,
+                            "y": -17
+                        },
+                        "node_id": "14d3f7f4-a9ae-4431-af08-9d560807bd49",
+                        "port_number": 0
+                    }
+                ],
+                "suspend": false
             }
         ],
         "nodes": [
@@ -2501,6 +2532,6 @@
     },
     "type": "topology",
     "variables": null,
-    "version": "2.1.10",
-    "zoom": 67
+    "version": "2.1.12",
+    "zoom": 140
 }

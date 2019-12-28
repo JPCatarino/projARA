@@ -1,2 +1,41 @@
-conf t
-int f0/0
+*** Interfaces *** 
+
+
+*** F0/0 *** (Lisboa)
+        conf t
+        interface F0/0
+	ip address 4.4.4.34 255.255.240
+	ip address 2001:4:4:8::2/62
+	no shut
+	end
+	write
+
+todo internet core (f0/1)
+
+
+
+*** F1/0 *** (NETY1)
+        conf t
+        interface F1/0
+	ip address 65.0.1.0.11 255.255.255.0
+	ip address 2201:65:0::11/48
+	no shut
+	end
+	write
+
+*** F2/0 *** (Vigo)
+        conf t
+        interface F2/0
+	ip address 4.4.4.21 255.255.255.240
+	ip address 2001:4:4:4::10/62
+	no shut
+	end
+	write
+
+*** BGP Process *** *** eBGP ***
+
+    conf t      
+    router bgp 3000
+    address-family ipv4 unicast
+    neighbor 4.4.4.33 remote-as 1000
+	
