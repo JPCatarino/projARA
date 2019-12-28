@@ -38,4 +38,5 @@ todo internet core (f0/1)
     router bgp 3000
     address-family ipv4 unicast
     neighbor 4.4.4.33 remote-as 1000
+    neighbor 4.4.4.20 remote-as 2000	 
 	
