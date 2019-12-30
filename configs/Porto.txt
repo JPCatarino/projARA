@@ -81,7 +81,7 @@ NOTE: This may be used for every AS1000 Border router.
     match as-path 1 
     router bgp 1000
     address-family ipv4 unicast
-    neighbor VIGO_PEERINGLINK route-map routes-out out
+    neighbor 4.4.4.2 route-map routes-out out
 
 *** Interior routing constrains *** 
 NOTE: This may be used for every AS1000 border router.
