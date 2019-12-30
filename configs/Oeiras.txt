@@ -19,27 +19,57 @@
 
 *** Interfaces *** 
 
+    *** Loopback0 *** 
+        conf t
+        interface Loopback0
+        ip address 192.100.1.255 255.255.255.255
+        no shut
 
-*** F0/0 *** (Core)
+    *** F0/0 *** (Core)
+        conf t
+        interface F0/0
+        ip address 192.100.1.3 255.255.255.240
+        no shut
+
+
+    *** F0/1 *** (EmpB2)
+        conf t
+        interface F0/1
+        ip address 192.100.1.49 255.255.255.252
+        no shut
+        end
+        write
+
+
+        *** F1/0 *** (Faro)
+        conf t
+        interface F1/0
+        ip address 192.100.1.57 255.255.255.252
+        no shut
+        end
+        write
+
+*** BGP Process ***
+    *** iBGP ***
+        conf t      
+        router bgp 1000
+        address-family ipv4 unicast 
+        neighbor 192.100.1.251 remote-as 1000
+        neighbor 192.100.1.251 next-hop-self
+        neighbor 192.100.1.251 update-source Loopback0
+        neighbor 192.100.1.252 remote-as 1000
+        neighbor 192.100.1.252 next-hop-self
+        neighbor 192.100.1.252 update-source Loopback0
+        neighbor 192.100.1.253 remote-as 1000
+        neighbor 192.100.1.253 next-hop-self
+        neighbor 192.100.1.253 update-source Loopback0
+        neighbor 192.100.1.254 remote-as 1000
+        neighbor 192.100.1.254 next-hop-self
+        neighbor 192.100.1.254 update-source Loopback0
+
+*** OSPF Processes ***
+
     conf t
-    interface F0/0
-    ip address 192.100.1.3 255.255.255.240
-    no shut
-
-
-*** F0/1 *** (EmpB2)
-    conf t
-    interface F0/1
-	ip address 192.100.1.49 255.255.255.252
-	no shut
-	end
-	write
-
-
-    *** F1/0 *** (Faro)
-    conf t
-    interface F1/0
-	ip address 192.100.1.57 255.255.255.252
-	no shut
-	end
-	write
+    router ospf 1000
+    network 192.100.1.0 0.0.0.255 area 0
+    redistribute bgp 1000

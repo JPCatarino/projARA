@@ -45,6 +45,12 @@ ipv6 unicast-routing
         address-family ipv4 unicast
         neighbor 10.255.255.233 remote-as 1000
         neighbor 10.255.255.233 next-hop-self
+        neighbor 192.100.1.254 remote-as 1000
+        neighbor 192.100.1.254 next-hop-self
+        neighbor 192.100.1.254 update-source Loopback0
+        neighbor 192.100.1.255 remote-as 1000
+        neighbor 192.100.1.255 next-hop-self
+        neighbor 192.100.1.255 update-source Loopback0
 
 
 *** OSPF Processes ***

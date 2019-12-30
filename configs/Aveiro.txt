@@ -19,37 +19,65 @@
 
 *** Interfaces *** 
 
-*** F0/0 *** (Core)
-    conf t
-    interface F0/0
-    ip address 192.100.1.4 255.255.255.240
-    no shut
+    *** Loopback0 *** 
+        conf t
+        interface Loopback0
+        ip address 192.100.1.254 255.255.255.255
+        no shut
+
+    *** F0/0 *** (Core)
+        conf t
+        interface F0/0
+        ip address 192.100.1.4 255.255.255.240
+        no shut
 
 
-*** F0/1 *** (EmpA1)
+    *** F0/1 *** (EmpA1)
         conf t
         interface F0/1
-	ip address 192.100.1.41 255.255.255.252
-	ipv6 address 
-	no shut
-	end
-	write
+        ip address 192.100.1.41 255.255.255.252
+        ipv6 address 
+        no shut
+        end
+        write
 
-*** F1/1 *** (Datacenter)
+    *** F1/1 *** (Datacenter)
         conf t
         interface F1/1
-	ip address 192.100.3.10 255.255.255.0
-	ipv6 address 2001:100:3::10/48
-	no shut
-	end
-	write    
+        ip address 192.100.3.10 255.255.255.0
+        ipv6 address 2001:100:3::10/48
+        no shut
+        end
+        write    
 
 
-*** F1/0 *** (EmpB1)
+    *** F1/0 *** (EmpB1)
         conf t
         interface F1/0
-	ip address 192.100.1.45 255.255.255.252
-	ip address 
-	no shut
-	end
-	write   
+        ip address 192.100.1.45 255.255.255.252
+        no shut
+        end
+        write   
+
+
+*** BGP Process ***
+    *** iBGP ***
+        conf t      
+        router bgp 1000
+        address-family ipv4 unicast 
+        neighbor 192.100.1.252 remote-as 1000
+        neighbor 192.100.1.252 next-hop-self
+        neighbor 192.100.1.252 update-source Loopback0
+        neighbor 192.100.1.253 remote-as 1000
+        neighbor 192.100.1.253 next-hop-self
+        neighbor 192.100.1.253 update-source Loopback0
+        neighbor 192.100.1.255 remote-as 1000
+        neighbor 192.100.1.255 next-hop-self
+        neighbor 192.100.1.255 update-source Loopback0
+
+*** OSPF Processes ***
+
+    conf t
+    router ospf 1000
+    network 192.100.1.0 0.0.0.255 area 0
+    redistribute bgp 1000
