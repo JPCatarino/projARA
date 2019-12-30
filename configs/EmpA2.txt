@@ -1,3 +1,9 @@
+*** Loopback0 ***
+        conf t 
+        interface Loopback0
+        ip address 110.1.1.251 255.255.255.255
+        no shut
+
 *** F0/0 *** (EmpA2)
     conf t
     interface F0/0
@@ -5,3 +11,30 @@
 	no shut
 	end
 	write
+
+
+***MPLS-RSVPTE Aveiro-Faro***
+
+// in general configuration and in each physical interface:
+mpls traffic-eng tunnels 
+
+//  On OSPF configuration mode of all??? routers
+
+mpls traffic-eng  area 0
+mpls traffic-eng router-id Loopback 0
+
+//in each physical interface 
+ip rsvp bandwith 512 512
+
+interface tunnel 1
+ip unnumbered Loopback0
+tunnel destination 110.1.1.252
+tunnel mode mpls traffic-eng
+tunnel mpls traffic-eng bandwidth 20000
+tunnel mpls traffic-eng path-option 1 explicit name path1
+ip explicit-path name path1 enable
+next-address 192.100.1.53	
+next-address 192.100.1.57
+next-address 192.100.1.4
+next-address 192.100.1.42
+
