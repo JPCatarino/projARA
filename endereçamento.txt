@@ -67,6 +67,33 @@
         Porto <-> Vigo - 2001:4:4::/62
         Vigo <-> Madrid - 2001:4:4:4::/62
         Madrid <-> Lisboa - 2001:4:4:8::/62
+
+
+
+**AS 1000 peer2peer links** 
+*** IPV4 ***
+Aveiro <-> EmpA1 -> 192.100.1.40/30 
+Aveiro <-> EmpB1 -> 192.100.1.44/30 
+
+Oeiras <-> EmpB2 -> 192.100.1.48/30
+Faro <-> EmpA2 -> 192.100.1.52/30
+
+Oeiras <-> Faro -> 192.100.1.56/30
+Porto <-> EmpC -> 192.100.1.60/30
+
+*** IPV6 ***
+Aveiro <-> EmpA1 -> 
+Aveiro <-> EmpB1 ->  
+
+Oeiras <-> EmpB2 -> 
+Faro <-> EmpA2 ->
+
+Oeiras <-> Faro ->
+Porto <-> EmpC ->
+
+
+
+
  
 
 

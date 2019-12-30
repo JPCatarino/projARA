@@ -1,0 +1,13 @@
+*** Interfaces *** 
+
+*** F0/0 *** (Oeiras)
+    conf t
+    interface F0/0
+	ip address 192.100.1.46 255.255.255.252
+	ipv6 address 
+	no shut
+	end
+	write
+
+
+

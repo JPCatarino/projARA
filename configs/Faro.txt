@@ -1,0 +1,32 @@
+*** Interfaces *** 
+
+*** F0/0 *** (Oeiras)
+    conf t
+    interface F0/0
+	ip address 192.100.1.58 255.255.255.252
+	no shut
+	end
+	write
+
+
+*** F0/1 *** (EmpA2)
+    conf t
+    interface F0/1
+	ip address 192.100.1.53 255.255.255.252
+	no shut
+	end
+	write
+
+
+*** F1/0 *** (Daracenter Faro)
+    conf t
+    interface F1/0
+	ip address 192.100.4.10 255.255.255.0
+	ipv6 address 2001:100:4::10/48
+	no shut
+	end
+	write    
+
+
+
+

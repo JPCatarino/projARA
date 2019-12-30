@@ -2,10 +2,9 @@
 //incomplete
 
 *** F0/0 *** (Porto)
-        conf t
-        interface F0/0
-	ip address ??
-	ip address ??
+    conf t
+    interface F0/0
+	ip address 192.100.1.62 255.255.255.252
 	no shut
 	end
 	write

@@ -15,3 +15,41 @@
     router bgp 1000
     address-family ipv4 unicast
     neighbor x.x.x.x route-map routes-in in 
+
+
+*** Interfaces *** 
+
+*** F0/0 *** (Core)
+    conf t
+    interface F0/0
+    ip address 192.100.1.4 255.255.255.240
+    no shut
+
+
+*** F0/1 *** (EmpA1)
+        conf t
+        interface F0/1
+	ip address 192.100.1.41 255.255.255.252
+	ipv6 address 
+	no shut
+	end
+	write
+
+*** F1/1 *** (Datacenter)
+        conf t
+        interface F1/1
+	ip address 192.100.3.10 255.255.255.0
+	ipv6 address 2001:100:3::10/48
+	no shut
+	end
+	write    
+
+
+*** F1/0 *** (EmpB1)
+        conf t
+        interface F1/0
+	ip address 192.100.1.45 255.255.255.252
+	ip address 
+	no shut
+	end
+	write   
