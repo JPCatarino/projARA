@@ -43,3 +43,57 @@
 	no shut
 	end
 	write
+
+
+*** MPLS VPN for Corporate client B  ***
+
+conf t
+ip vrf VPN-1
+rd 1000:1
+route target export 1000:1
+route target import 1000:1
+end 
+write 
+
+conf t
+int F0/1
+ip vrf forwarding VPN-1
+ip address 192.100.1.49 255.255.255.252		
+
+->for all Router interfaces except the ones connected to network B:
+conf t
+interface F0/0
+ip ospf 1 area 0
+interface F1/0
+ip ospf 1 area 0
+interface Loopback0
+ip ospf 1 area 0
+end
+write
+
+->Enable MPLS (LDP) in general configuration mode and in each physical interface (mpls ip) except the
+ones connected to network B.
+
+mpls ip
+conf t
+interface F0/0
+mpls ip
+interface F1/0
+mpls ip
+interface Loopback0
+mpls ip
+end 
+write    
+
+conf t
+router bgp 1000
+bgp router-id ???
+neighbor 192.100.1.254 255.255.255.255 remote-as 1000
+neighbor 192.100.1.254 update-source Loopback0
+address-family vpnv4
+neighbor 192.100.1.254 activate
+neighbor 192.100.1.254 send-community both
+address-family ipv4 vrf VPN-1 
+redistribute connected
+
+#todo route map para encaminhar para o EmpB2

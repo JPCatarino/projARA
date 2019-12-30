@@ -53,3 +53,95 @@
 	no shut
 	end
 	write   
+
+
+
+
+***MPLS-RSVPTE Aveiro-Faro***
+
+// in general configuration and in each physical interface:
+mpls traffic-eng tunnels 
+
+//  On OSPF configuration mode of all??? routers
+
+mpls traffic-eng  area 0
+mpls traffic-eng router-id Loopback 0
+
+//in each physical interface 
+ip rsvp bandwith 512 512
+
+interface tunnel 1
+ip unnumbered Loopback0
+tunnel destination 192.100.1.255
+tunnel mode mpls traffic-eng
+tunnel mpls traffic-eng bandwidth 20000
+tunnel mpls traffic-eng path-option 1 explicit name path1
+ip explicit-path name path1 enable
+next-address 192.100.1.3
+next-address 192.100.1.58 
+
+#todo routemap para enviar para empA2 (???)
+
+
+
+
+*** MPLS VPN for Corporate client B  ***
+
+conf t
+ip vrf VPN-1
+rd 1000:1
+route target export 1000:1
+route target import 1000:1
+end 
+write 
+
+conf t
+int F1/0
+ip vrf forwarding VPN-1
+ip address 192.100.1.45 255.255.255.252
+
+
+->for all Router interfaces except the ones connected to network B:
+
+conf t
+interface F0/0
+ip ospf 1 area 0
+interface F0/1
+ip ospf 1 area 0
+interface F1/1
+ip ospf 1 area 0
+interface Loopback0
+ip ospf 1 area 0
+end 
+write
+
+->Enable MPLS (LDP) in general configuration mode and in each physical interface (mpls ip) except the
+ones connected to network B.
+
+mpls ip
+conf t
+interface F0/0
+mpls ip
+interface F0/1
+mpls ip
+interface F1/1
+mpls ip
+interface Loopback0
+mpls ip
+end 
+write    
+
+
+conf t
+router bgp 1000
+bgp router-id ???
+neighbor 192.100.1.255 255.255.255.255 remote-as 1000
+neighbor 192.100.1.255 update-source Loopback0
+address-family vpnv4
+neighbor 192.100.1.255 activate
+neighbor 192.100.1.255 send-community both
+address-family ipv4 vrf VPN-1 
+redistribute connected
+
+
+#todo route map para encaminhar para EmpB1
