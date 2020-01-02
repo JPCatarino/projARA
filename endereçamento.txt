@@ -82,14 +82,14 @@ Oeiras <-> Faro -> 192.100.1.56/30
 Porto <-> EmpC -> 192.100.1.60/30
 
 *** IPV6 ***
-Aveiro <-> EmpA1 -> 
-Aveiro <-> EmpB1 ->  
+Aveiro <-> EmpA1 -> 2001:100:1:4::/64
+Aveiro <-> EmpB1 -> 2001:100:1:5::/64 
 
-Oeiras <-> EmpB2 -> 
-Faro <-> EmpA2 ->
+Oeiras <-> EmpB2 -> 2001:100:1:6::/64
+Faro <-> EmpA2 -> 2001:100:1:7::/64
 
-Oeiras <-> Faro ->
-Porto <-> EmpC ->
+Oeiras <-> Faro -> 2001:100:1:8::/64
+Porto <-> EmpC -> 2001:100:1:9::/64
 
 
 

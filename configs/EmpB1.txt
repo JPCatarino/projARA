@@ -9,5 +9,31 @@
 	end
 	write
 
+*** F0/1 *** (PC)
+    conf t
+    interface F0/1
+	ip address 110.2.1.20 255.255.255.0
+	no shut
+	end
+	write
+
+
+
+
+*** Loopback0 ***
+        conf t 
+        interface Loopback0
+        ip address 110.2.1.252 255.255.255.255
+        no shut
+
+
+
+
+
+
+
+
+
+
 
 

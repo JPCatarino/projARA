@@ -1,8 +1,16 @@
 *** Interfaces *** 
 
+
+*** Loopback0 ***
+        conf t 
+        interface Loopback0
+        ip address 110.1.1.252 255.255.255.255
+        no shut
+
+
 *** F0/0 *** (Aveiro)
     conf t
-    interface F0/1
+    interface F0/0
 	ip address 192.100.1.42 255.255.255.252
 	no shut
 	end
@@ -11,18 +19,3 @@
 
 
 
-
-
-
-
-***MPLS-RSVPTE Aveiro-Faro***
-
-ip cef  
-mpls traffic-eng tunnels 
-mpls traffic-eng router-id Loopback 0
-
-//in each physical interface 
-ip rsvp bandwith 512 512
-
-interface tunnel 1
-ip unnumbered Loopback0
