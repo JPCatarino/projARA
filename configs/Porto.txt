@@ -93,13 +93,13 @@ NOTE: This may be used for every AS1000 border router.
 Has to be set in
     
     conf t
-    ip as-path access-list ES2 permit 3000
-    ip as-path access-list noES2 permit ^(?!3000).*$
+    ip as-path access-list 2 permit 3000
+    ip as-path access-list 3 permit ^(?!3000).*$
     route-map inRoutes
     route-map map-preference
-    match as-path ES2 
+    match as-path 2 
     set local-preference 200
-    match as-path noES2
+    match as-path 3
     set local-preference 100
 
 *** Communities for routing constrains *** 
