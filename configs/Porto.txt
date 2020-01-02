@@ -43,8 +43,8 @@ ipv6 unicast-routing
         conf t 
         router bgp 1000
         address-family ipv4 unicast
-        neighbor 10.255.255.234 remote-as 1000
-        neighbor 10.255.255.234 next-hop-self
+        neighbor 192.100.1.253 remote-as 1000
+        neighbor 192.100.1.253 next-hop-self
         neighbor 192.100.1.254 remote-as 1000
         neighbor 192.100.1.254 next-hop-self
         neighbor 192.100.1.254 update-source Loopback0
@@ -60,6 +60,7 @@ ipv6 unicast-routing
     redistribute bgp 1000
 
 *** Tunnels ***
+    // not in use anymore 
     conf t
     interface Tunnel 0
     ip address 10.255.255.233 255.255.255.252
@@ -104,10 +105,13 @@ Has to be set in
 
 *** Communities for routing constrains *** 
     conf t
+    ip as-path access-list 4 permit _3000$
     ip bgp-community new-format 
     route-map porto-out permit 20
-    match route-type external
+    match as-path 4
     set community 1000:1
     router bgp 1000
-    neighbor x.x.x.x route-map porto-out out
-    neighbor x.x.x.x send-community
+    neighbor 192.100.1.254 route-map porto-out out
+    neighbor 192.100.1.254 send-community
+    neighbor 192.100.1.255 route-map porto-out out
+    neighbor 192.100.1.255 send-community

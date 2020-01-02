@@ -43,8 +43,9 @@ ipv6 unicast-routing
         conf t 
         router bgp 1000
         address-family ipv4 unicast
-        neighbor 10.255.255.233 remote-as 1000
-        neighbor 10.255.255.233 next-hop-self
+        neighbor 192.100.1.252 remote-as 1000
+        neighbor 192.100.1.252 next-hop-self
+        neighbor 192.100.1.252 update-source Loopback0
         neighbor 192.100.1.254 remote-as 1000
         neighbor 192.100.1.254 next-hop-self
         neighbor 192.100.1.254 update-source Loopback0
@@ -74,13 +75,20 @@ NOTE: This may be used for every AS1000 Border router.
 
 *** Communities for routing constrains *** 
     conf t
+    ip as-path access-list 4 permit _3000$
     ip bgp-community new-format 
     route-map lisboa-out permit 20
-    match route-type external
+    match as-path 4
     set community 1000:2
+    router bgp 1000
+    neighbor 192.100.1.254 route-map lisboa-out out
+    neighbor 192.100.1.254 send-community
+    neighbor 192.100.1.255 route-map lisboa-out out
+    neighbor 192.100.1.255 send-community
 
 
 *** Tunnels ***
+    // Not in use
     conf t
     interface Tunnel 0
     ip address 10.255.255.234 255.255.255.252

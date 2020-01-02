@@ -74,6 +74,23 @@
     network 192.100.1.0 0.0.0.255 area 0
     redistribute bgp 1000
 
+*** COMMUNITIES FOR CONSTRAINTS *** 
+    conf t
+    ip bgp-community new-format
+    ip community-list 1 permit 1000:1
+    ip community-list 2 permit 1000:2
+    route-map routes-in permit 10
+    match community 1
+    set local-preference 22
+    route-map routes-in permit 20
+    match community 2
+    set local-preference 111
+    router bgp 1000
+    address-family ipv4 unicast
+    neighbor 192.100.1.252 route-map routes-in in
+    neighbor 192.100.1.253 route-map routes-in in
+
+
 *** MPLS VPN for Corporate client B  ***
 
 conf t
