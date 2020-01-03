@@ -66,6 +66,7 @@
         neighbor 192.100.1.254 remote-as 1000
         neighbor 192.100.1.254 next-hop-self
         neighbor 192.100.1.254 update-source Loopback0
+        redistribute ospf 1004
 
 *** OSPF Processes ***
 
@@ -73,6 +74,10 @@
     router ospf 1000
     network 192.100.1.0 0.0.0.255 area 0
     redistribute bgp 1000
+
+    router ospf 1004 
+    network 192.100.1.48 0.0.0.3 area 0
+
 
 *** COMMUNITIES FOR CONSTRAINTS *** 
     conf t

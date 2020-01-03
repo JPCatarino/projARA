@@ -17,5 +17,17 @@
 	write
 
 
+*** F0/1 ***
+    conf t
+    interface f0/1
+    ip address 110.1.1.126 255.255.255.128
+    no shut
+
+*** OSPF ***
+    conf t
+    router ospf 1003
+    network 192.100.1.40 0.0.0.3 area 0
+    network 110.1.1.0 0.0.0.255 area 0
+
 
 

@@ -57,6 +57,7 @@ ipv6 unicast-routing
     conf t
     router ospf 1000
     network 192.100.1.0 0.0.0.255 area 0
+    network 10.1.0.254 0.0.0.0 area 0 // to all interfaces
     redistribute bgp 1000
 
 *** Tunnels ***

@@ -54,6 +54,11 @@ next-address 192.100.1.4
 #todo routemap para enviar para empA1 (???)
  
 
+*** OSPF ***
+    conf t
+    router ospf 1005
+    network 192.100.1.52 0.0.0.3 area 0
+
 
 
 

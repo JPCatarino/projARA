@@ -12,7 +12,7 @@
 *** F0/1 *** (PC)
     conf t
     interface F0/1
-	ip address 110.2.1.20 255.255.255.0
+	ip address 110.2.1.20 255.255.255.128
 	no shut
 	end
 	write
@@ -25,6 +25,12 @@
         interface Loopback0
         ip address 110.2.1.252 255.255.255.255
         no shut
+
+*** OSPF ****
+    conf t
+    router ospf 1003
+    network 192.100.1.44 0.0.0.3 area 0
+    network 110.2.1.0 0.0.0.255 area 0
 
 
 
