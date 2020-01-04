@@ -1,9 +1,1 @@
-# This the configuration for DCA
-#
-# Uncomment the following line to enable DHCP
-# dhcp
-# or the line below to manually setup an IP address and subnet mask
-# ip 192.168.1.1 255.0.0.0
-#
-
-set pcname DCA
+ip 192.100.3.150 192.100.3.10 24

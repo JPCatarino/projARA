@@ -1,46 +1,54 @@
-Dec 06 16:44:41.673 HYPERVISOR: Release 0.2.17-x86/Windows (tag 2017072410)
-Dec 06 16:44:41.674 HYPERVISOR: Started on IP = 127.0.0.1, TCP port = 51060.
-Dec 06 16:44:42.166 HYPERVISOR: exec_cmd: hypervisor version 
-Dec 06 16:44:42.167 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\Media Markt\Desktop\projARA\projARAFinal\project-files\dynamips 
-Dec 06 16:44:42.167 GENERAL: working_dir=C:\Users\Media Markt\Desktop\projARA\projARAFinal\project-files\dynamips
-Dec 06 16:44:42.167 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\Media Markt\Desktop\projARA\projARAFinal\project-files\dynamips\0d240325-a365-46c4-8a33-997998b79b39 
-Dec 06 16:44:42.167 GENERAL: working_dir=C:\Users\Media Markt\Desktop\projARA\projARAFinal\project-files\dynamips\0d240325-a365-46c4-8a33-997998b79b39
-Dec 06 16:44:42.168 HYPERVISOR: exec_cmd: vm create Vigo 11 c7200 
-Dec 06 16:44:42.169 VM: VM Vigo created.
-Dec 06 16:44:42.169 HYPERVISOR: exec_cmd: vm set_con_tcp_port Vigo 5011 
-Dec 06 16:44:42.169 HYPERVISOR: exec_cmd: c7200 get_mac_addr Vigo 
-Dec 06 16:44:42.170 HYPERVISOR: exec_cmd: vm get_status Vigo 
-Dec 06 16:44:42.170 HYPERVISOR: exec_cmd: vm slot_add_binding Vigo 0 0 C7200-IO-FE 
-Dec 06 16:44:42.170 HYPERVISOR: exec_cmd: vm set_disk0 Vigo 0 
-Dec 06 16:44:42.170 HYPERVISOR: exec_cmd: vm set_exec_area Vigo 64 
-Dec 06 16:44:42.171 HYPERVISOR: exec_cmd: vm get_status Vigo 
-Dec 06 16:44:42.171 HYPERVISOR: exec_cmd: vm set_idle_pc Vigo 0x60609024 
-Dec 06 16:44:42.172 HYPERVISOR: exec_cmd: vm set_ios Vigo C:/Users/Media Markt/GNS3/images/IOS/c7200-adventerprisek9-mz.151-4.M2.image 
-Dec 06 16:44:42.172 HYPERVISOR: exec_cmd: c7200 set_mac_addr Vigo ca0b.440c.0000 
-Dec 06 16:44:42.172 HYPERVISOR: exec_cmd: vm set_nvram Vigo 512 
-Dec 06 16:44:42.172 HYPERVISOR: exec_cmd: vm set_ram Vigo 512 
-Dec 06 16:44:42.173 HYPERVISOR: exec_cmd: vm get_status Vigo 
-Dec 06 16:44:42.173 HYPERVISOR: exec_cmd: vm slot_remove_binding Vigo 0 0 
-Dec 06 16:44:42.173 HYPERVISOR: exec_cmd: vm get_status Vigo 
-Dec 06 16:44:42.173 HYPERVISOR: exec_cmd: vm slot_add_binding Vigo 0 0 C7200-IO-2FE 
-Dec 06 16:44:42.173 HYPERVISOR: exec_cmd: vm get_status Vigo 
-Dec 06 16:44:42.174 HYPERVISOR: exec_cmd: vm slot_add_binding Vigo 1 0 PA-2FE-TX 
-Dec 06 16:44:42.174 HYPERVISOR: exec_cmd: vm get_status Vigo 
-Dec 06 16:44:42.174 HYPERVISOR: exec_cmd: vm slot_add_binding Vigo 2 0 PA-2FE-TX 
-Dec 06 16:46:05.867 HYPERVISOR: exec_cmd: vm get_status Vigo 
-Dec 06 16:46:07.993 HYPERVISOR: exec_cmd: vm get_status Vigo 
-Dec 06 16:46:07.994 HYPERVISOR: exec_cmd: vm extract_config Vigo 
-Dec 06 17:14:10.700 HYPERVISOR: exec_cmd: vm set_ios Vigo C:/Users/Media Markt/GNS3/images/IOS/c7200-adventerprisek9-mz.151-4.M2.image 
-Dec 06 17:25:18.968 HYPERVISOR: exec_cmd: vm set_ios Vigo C:/Users/Media Markt/GNS3/images/IOS/c7200-adventerprisek9-mz.151-4.M2.image 
-Dec 06 17:35:16.543 HYPERVISOR: exec_cmd: nio create_udp udp-33d27c26-9db4-4d0f-89da-6365ca0b6444 10062 127.0.0.1 10063 
-Dec 06 17:35:17.082 HYPERVISOR: exec_cmd: vm slot_add_nio_binding Vigo 0 0 udp-33d27c26-9db4-4d0f-89da-6365ca0b6444 
-Dec 06 17:35:17.083 HYPERVISOR: exec_cmd: vm get_status Vigo 
-Dec 06 17:48:06.979 HYPERVISOR: exec_cmd: vm get_status Vigo 
-Dec 06 17:48:06.980 HYPERVISOR: exec_cmd: vm extract_config Vigo 
-Dec 06 17:48:07.453 HYPERVISOR: exec_cmd: vm get_status Vigo 
-Dec 06 17:48:07.454 HYPERVISOR: exec_cmd: vm extract_config Vigo 
-Dec 06 17:48:07.455 HYPERVISOR: exec_cmd: vm delete Vigo 
-Dec 06 17:48:07.456 VM: VM Vigo destroyed.
-Dec 06 17:48:07.465 HYPERVISOR: exec_cmd: hypervisor stop 
-Dec 06 17:48:07.536 HYPERVISOR: Stopped.
-Dec 06 17:48:07.536 GENERAL: reset done.
+Jan 03 15:21:04.168 HYPERVISOR: Release 0.2.17-x86/Windows (tag 2017072410)
+Jan 03 15:21:04.169 HYPERVISOR: Started on IP = 127.0.0.1, TCP port = 49580.
+Jan 03 15:21:04.676 HYPERVISOR: exec_cmd: hypervisor version 
+Jan 03 15:21:04.677 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\Media Markt\Desktop\projARA\projARAFinal\project-files\dynamips 
+Jan 03 15:21:04.677 GENERAL: working_dir=C:\Users\Media Markt\Desktop\projARA\projARAFinal\project-files\dynamips
+Jan 03 15:21:04.677 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\Media Markt\Desktop\projARA\projARAFinal\project-files\dynamips\0d240325-a365-46c4-8a33-997998b79b39 
+Jan 03 15:21:04.679 GENERAL: working_dir=C:\Users\Media Markt\Desktop\projARA\projARAFinal\project-files\dynamips\0d240325-a365-46c4-8a33-997998b79b39
+Jan 03 15:21:04.679 HYPERVISOR: exec_cmd: vm create Vigo 11 c7200 
+Jan 03 15:21:04.680 VM: VM Vigo created.
+Jan 03 15:21:04.681 HYPERVISOR: exec_cmd: vm set_con_tcp_port Vigo 5011 
+Jan 03 15:21:04.681 HYPERVISOR: exec_cmd: c7200 get_mac_addr Vigo 
+Jan 03 15:21:04.681 HYPERVISOR: exec_cmd: vm get_status Vigo 
+Jan 03 15:21:04.681 HYPERVISOR: exec_cmd: vm slot_add_binding Vigo 0 0 C7200-IO-FE 
+Jan 03 15:21:04.682 HYPERVISOR: exec_cmd: vm set_disk0 Vigo 0 
+Jan 03 15:21:04.682 HYPERVISOR: exec_cmd: vm set_exec_area Vigo 64 
+Jan 03 15:21:04.682 HYPERVISOR: exec_cmd: vm get_status Vigo 
+Jan 03 15:21:04.682 HYPERVISOR: exec_cmd: vm set_idle_pc Vigo 0x60609024 
+Jan 03 15:21:04.683 HYPERVISOR: exec_cmd: vm set_ios Vigo C:/Users/Media Markt/GNS3/images/IOS/c7200-adventerprisek9-mz.151-4.M2.image 
+Jan 03 15:21:04.683 HYPERVISOR: exec_cmd: c7200 set_mac_addr Vigo ca0b.440c.0000 
+Jan 03 15:21:04.684 HYPERVISOR: exec_cmd: vm set_nvram Vigo 512 
+Jan 03 15:21:04.684 HYPERVISOR: exec_cmd: vm set_ram Vigo 512 
+Jan 03 15:21:04.684 HYPERVISOR: exec_cmd: vm get_status Vigo 
+Jan 03 15:21:04.684 HYPERVISOR: exec_cmd: vm slot_remove_binding Vigo 0 0 
+Jan 03 15:21:04.685 HYPERVISOR: exec_cmd: vm get_status Vigo 
+Jan 03 15:21:04.685 HYPERVISOR: exec_cmd: vm slot_add_binding Vigo 0 0 C7200-IO-2FE 
+Jan 03 15:21:04.685 HYPERVISOR: exec_cmd: vm get_status Vigo 
+Jan 03 15:21:04.685 HYPERVISOR: exec_cmd: vm slot_add_binding Vigo 1 0 PA-2FE-TX 
+Jan 03 15:21:04.686 HYPERVISOR: exec_cmd: vm get_status Vigo 
+Jan 03 15:21:04.686 HYPERVISOR: exec_cmd: vm slot_add_binding Vigo 2 0 PA-2FE-TX 
+Jan 03 15:21:17.325 HYPERVISOR: exec_cmd: nio create_udp udp-8ccaf25d-8436-4751-a843-261098abd74f 10062 127.0.0.1 10063 
+Jan 03 15:21:17.876 HYPERVISOR: exec_cmd: vm slot_add_nio_binding Vigo 0 0 udp-8ccaf25d-8436-4751-a843-261098abd74f 
+Jan 03 15:21:17.877 HYPERVISOR: exec_cmd: vm get_status Vigo 
+Jan 03 15:21:18.539 HYPERVISOR: exec_cmd: nio create_udp udp-685f1011-df66-4d84-9c4f-9a49a57852f2 10078 127.0.0.1 10079 
+Jan 03 15:21:18.543 HYPERVISOR: exec_cmd: vm slot_add_nio_binding Vigo 0 1 udp-685f1011-df66-4d84-9c4f-9a49a57852f2 
+Jan 03 15:21:18.544 HYPERVISOR: exec_cmd: vm get_status Vigo 
+Jan 03 15:21:20.033 HYPERVISOR: exec_cmd: nio create_udp udp-962ffa51-4c39-4b47-818b-08409155be8c 10104 127.0.0.1 10105 
+Jan 03 15:21:20.035 HYPERVISOR: exec_cmd: vm slot_add_nio_binding Vigo 2 0 udp-962ffa51-4c39-4b47-818b-08409155be8c 
+Jan 03 15:21:20.035 HYPERVISOR: exec_cmd: vm get_status Vigo 
+Jan 03 15:44:12.323 HYPERVISOR: exec_cmd: vm create Ghost 0 c7200 
+Jan 03 15:44:12.326 VM: VM Ghost created.
+Jan 03 15:44:12.326 HYPERVISOR: exec_cmd: vm set_ios Ghost C:/Users/Media Markt/GNS3/images/IOS/c7200-adventerprisek9-mz.151-4.M2.image 
+Jan 03 15:44:12.327 HYPERVISOR: exec_cmd: vm set_ghost_status Ghost 1 
+Jan 03 15:44:12.327 HYPERVISOR: exec_cmd: vm set_ghost_file Ghost 'C:\Users\Media Markt\Desktop\projARA\projARAFinal\project-files\dynamips\c7200-adventerprisek9-mz.151-4.M2.image-512.ghost' 
+Jan 03 15:44:12.328 HYPERVISOR: exec_cmd: vm get_status Vigo 
+Jan 03 15:44:12.329 HYPERVISOR: exec_cmd: vm set_config Vigo configs\i11_startup-config.cfg 
+Jan 03 15:44:12.329 HYPERVISOR: exec_cmd: vm start Vigo 
+Jan 03 15:45:00.162 HYPERVISOR: exec_cmd: vm extract_config Vigo 
+Jan 03 15:45:30.694 HYPERVISOR: exec_cmd: vm extract_config Vigo 
+Jan 03 15:55:32.173 HYPERVISOR: exec_cmd: vm get_status Vigo 
+Jan 03 15:55:32.174 HYPERVISOR: exec_cmd: vm stop Vigo 
+Jan 03 15:55:32.344 VM: VM Vigo shutdown.
+Jan 03 15:55:32.346 HYPERVISOR: exec_cmd: vm extract_config Vigo 
+Jan 03 18:47:18.878 HYPERVISOR: exec_cmd: vm get_status Vigo 
+Jan 03 18:47:18.879 HYPERVISOR: exec_cmd: vm extract_config Vigo 

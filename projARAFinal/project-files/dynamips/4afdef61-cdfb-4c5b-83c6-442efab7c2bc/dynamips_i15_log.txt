@@ -1,0 +1,16 @@
+Jan 03 18:48:01.074 HYPERVISOR: Release 0.2.17-x86/Windows (tag 2017072410)
+Jan 03 18:48:01.075 HYPERVISOR: Started on IP = 127.0.0.1, TCP port = 53569.
+Jan 03 18:48:01.591 HYPERVISOR: exec_cmd: hypervisor version 
+Jan 03 18:48:01.592 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\Media Markt\Desktop\projARA\projARAFinal\project-files\dynamips 
+Jan 03 18:48:01.593 GENERAL: working_dir=C:\Users\Media Markt\Desktop\projARA\projARAFinal\project-files\dynamips
+Jan 03 18:48:01.593 HYPERVISOR: exec_cmd: ethsw create DCAs 
+Jan 03 18:48:18.047 HYPERVISOR: exec_cmd: nio create_udp udp-c47f2163-67b9-4edf-8a41-2186a53afa2a 10065 127.0.0.1 10064 
+Jan 03 18:48:18.049 HYPERVISOR: exec_cmd: ethsw add_nio DCAs udp-c47f2163-67b9-4edf-8a41-2186a53afa2a 
+Jan 03 18:48:18.064 HYPERVISOR: exec_cmd: ethsw set_access_port DCAs udp-c47f2163-67b9-4edf-8a41-2186a53afa2a 1 
+Jan 03 18:48:18.169 HYPERVISOR: exec_cmd: nio create_udp udp-0a44898a-6204-4baa-ad64-090be2219cdd 10068 127.0.0.1 10069 
+Jan 03 18:48:18.170 HYPERVISOR: exec_cmd: ethsw add_nio DCAs udp-0a44898a-6204-4baa-ad64-090be2219cdd 
+Jan 03 18:48:18.192 HYPERVISOR: exec_cmd: ethsw set_access_port DCAs udp-0a44898a-6204-4baa-ad64-090be2219cdd 1 
+Jan 03 18:48:54.007 HYPERVISOR: exec_cmd: ethsw delete DCAs 
+Jan 03 18:48:54.042 HYPERVISOR: exec_cmd: hypervisor stop 
+Jan 03 18:48:54.196 HYPERVISOR: Stopped.
+Jan 03 18:48:54.196 GENERAL: reset done.

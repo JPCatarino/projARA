@@ -1,0 +1,19 @@
+Jan 03 18:48:00.489 HYPERVISOR: Release 0.2.17-x86/Windows (tag 2017072410)
+Jan 03 18:48:00.490 HYPERVISOR: Started on IP = 127.0.0.1, TCP port = 53561.
+Jan 03 18:48:00.985 HYPERVISOR: exec_cmd: hypervisor version 
+Jan 03 18:48:00.986 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\Media Markt\Desktop\projARA\projARAFinal\project-files\dynamips 
+Jan 03 18:48:00.986 GENERAL: working_dir=C:\Users\Media Markt\Desktop\projARA\projARAFinal\project-files\dynamips
+Jan 03 18:48:00.987 HYPERVISOR: exec_cmd: ethsw create DPcore 
+Jan 03 18:48:09.864 HYPERVISOR: exec_cmd: nio create_udp udp-ff1554aa-5ce4-4099-abb1-6af3c4c61828 10001 127.0.0.1 10000 
+Jan 03 18:48:09.867 HYPERVISOR: exec_cmd: ethsw add_nio DPcore udp-ff1554aa-5ce4-4099-abb1-6af3c4c61828 
+Jan 03 18:48:09.879 HYPERVISOR: exec_cmd: ethsw set_access_port DPcore udp-ff1554aa-5ce4-4099-abb1-6af3c4c61828 1 
+Jan 03 18:48:10.010 HYPERVISOR: exec_cmd: nio create_udp udp-3d7be2e3-24c9-434b-9667-ff18b8011866 10003 127.0.0.1 10002 
+Jan 03 18:48:10.010 HYPERVISOR: exec_cmd: ethsw add_nio DPcore udp-3d7be2e3-24c9-434b-9667-ff18b8011866 
+Jan 03 18:48:10.034 HYPERVISOR: exec_cmd: ethsw set_access_port DPcore udp-3d7be2e3-24c9-434b-9667-ff18b8011866 1 
+Jan 03 18:48:10.149 HYPERVISOR: exec_cmd: nio create_udp udp-9926d567-c478-4b1e-bd5c-1b1059d328cc 10004 127.0.0.1 10005 
+Jan 03 18:48:10.149 HYPERVISOR: exec_cmd: ethsw add_nio DPcore udp-9926d567-c478-4b1e-bd5c-1b1059d328cc 
+Jan 03 18:48:10.156 HYPERVISOR: exec_cmd: ethsw set_access_port DPcore udp-9926d567-c478-4b1e-bd5c-1b1059d328cc 1 
+Jan 03 18:48:54.005 HYPERVISOR: exec_cmd: ethsw delete DPcore 
+Jan 03 18:48:54.071 HYPERVISOR: exec_cmd: hypervisor stop 
+Jan 03 18:48:54.118 HYPERVISOR: Stopped.
+Jan 03 18:48:54.119 GENERAL: reset done.
