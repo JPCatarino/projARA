@@ -116,3 +116,12 @@ Has to be set in
     neighbor 192.100.1.254 send-community
     neighbor 192.100.1.255 route-map porto-out out
     neighbor 192.100.1.255 send-community
+
+*** DENY Y1 network ***
+    conf t
+    ip prefix-list y1netin seq 16 deny 65.0.1.0/24 le 32
+    ip prefix-list y1netin seq 100 permit 0.0.0.0/0 le 32
+
+    router bgp 1000
+    address-family ipv4 unicast
+    neighbor 4.4.4.2 prefix-list y1netin in
