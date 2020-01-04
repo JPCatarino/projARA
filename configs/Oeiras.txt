@@ -139,11 +139,11 @@ write
 conf t
 router bgp 1000
 bgp router-id ???
-neighbor 192.100.1.254 255.255.255.255 remote-as 1000
-neighbor 192.100.1.254 update-source Loopback0
+neighbor 10.3.0.254 255.255.255.255 remote-as 1000
+neighbor 10.3.0.254 update-source Loopback0
 address-family vpnv4
-neighbor 192.100.1.254 activate
-neighbor 192.100.1.254 send-community both
+neighbor 10.3.0.254 activate
+neighbor 10.3.0.254 send-community both
 address-family ipv4 vrf VPN-1 
 redistribute connected
 

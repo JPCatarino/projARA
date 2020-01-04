@@ -1,0 +1,16 @@
+Jan 04 15:04:06.531 HYPERVISOR: Release 0.2.17-x86/Windows (tag 2017072410)
+Jan 04 15:04:06.532 HYPERVISOR: Started on IP = 127.0.0.1, TCP port = 60370.
+Jan 04 15:04:06.532 HYPERVISOR: exec_cmd: hypervisor version 
+Jan 04 15:04:06.533 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\Media Markt\Desktop\projARA\projARAFinal\project-files\dynamips 
+Jan 04 15:04:06.533 GENERAL: working_dir=C:\Users\Media Markt\Desktop\projARA\projARAFinal\project-files\dynamips
+Jan 04 15:04:06.533 HYPERVISOR: exec_cmd: ethsw create ICMadrid 
+Jan 04 15:04:23.820 HYPERVISOR: exec_cmd: nio create_udp udp-ed08a80e-b1dd-47fe-8658-21c8fc05f1bf 10081 127.0.0.1 10080 
+Jan 04 15:04:23.821 HYPERVISOR: exec_cmd: ethsw add_nio ICMadrid udp-ed08a80e-b1dd-47fe-8658-21c8fc05f1bf 
+Jan 04 15:04:23.833 HYPERVISOR: exec_cmd: ethsw set_access_port ICMadrid udp-ed08a80e-b1dd-47fe-8658-21c8fc05f1bf 1 
+Jan 04 15:04:24.164 HYPERVISOR: exec_cmd: nio create_udp udp-8f8240c6-9302-40b6-a267-fbd9a1e6af92 10086 127.0.0.1 10087 
+Jan 04 15:04:24.165 HYPERVISOR: exec_cmd: ethsw add_nio ICMadrid udp-8f8240c6-9302-40b6-a267-fbd9a1e6af92 
+Jan 04 15:04:24.170 HYPERVISOR: exec_cmd: ethsw set_access_port ICMadrid udp-8f8240c6-9302-40b6-a267-fbd9a1e6af92 1 
+Jan 04 15:23:56.983 HYPERVISOR: exec_cmd: ethsw delete ICMadrid 
+Jan 04 15:23:57.030 HYPERVISOR: exec_cmd: hypervisor stop 
+Jan 04 15:23:57.198 HYPERVISOR: Stopped.
+Jan 04 15:23:57.198 GENERAL: reset done.
