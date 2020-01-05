@@ -125,3 +125,20 @@ Has to be set in
     router bgp 1000
     address-family ipv4 unicast
     neighbor 4.4.4.2 prefix-list y1netin in
+
+*** Stop announcing private networks *** 
+    conf t
+    ip prefix-list pOut-priv-default seq 10 deny 10.0.0.0/8 le 32
+    ip prefix-list pOut-priv-default seq 16 deny 0.0.0.0/0
+    ip prefix-list pOut-priv-default seq 100 permit 0.0.0.0/0 le 32
+
+    router bgp 1000
+    address-family ipv4 unicast
+    neighbor 4.4.4.2 prefix-list pOut-priv-default out
+
+
+*** Route Aggregations ***
+    conf t 
+    router bgp 1000
+    address-family ipv4 unicast 
+    aggregate-address 192.100.1.0 255.255.248.0 summary-only
