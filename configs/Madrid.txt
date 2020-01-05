@@ -27,7 +27,7 @@ todo internet core (f0/1)
     conf t
     interface F2/0
 	ip address 4.4.4.21 255.255.255.240
-	ipv6 address 2001:4:4:4::10/62
+	ipv6 address 2001:4:4:4::10/64
 	no shut
 	end
 	write
@@ -40,3 +40,7 @@ todo internet core (f0/1)
     neighbor 4.4.4.33 remote-as 1000
     neighbor 4.4.4.20 remote-as 2000	 
 	network 65.0.1.0 mask 255.255.255.0
+	address-family ipv6 unicast 
+	neighbor 2001:4:4:4::11 remote-as 2000
+	neighbor 2001:4:4:8::1  remote-as 1000
+	network 2201:65:0::/48 
