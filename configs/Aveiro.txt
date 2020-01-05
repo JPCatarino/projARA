@@ -144,8 +144,8 @@ ip policy route-map ClientA
 conf t
 ip vrf VPN-1
 rd 1000:1
-route target export 1000:1
-route target import 1000:1
+route-target export 1000:1
+route-target import 1000:1
 end 
 write 
 
@@ -154,20 +154,6 @@ int F1/0
 ip vrf forwarding VPN-1
 ip address 192.100.1.45 255.255.255.252
 
-
-->for all Router interfaces except the ones connected to network B:
-
-conf t
-interface F0/0
-ip ospf 1 area 0
-interface F0/1
-ip ospf 1 area 0
-interface F1/1
-ip ospf 1 area 0
-interface Loopback0
-ip ospf 1 area 0
-end 
-write
 
 ->Enable MPLS (LDP) in general configuration mode and in each physical interface (mpls ip) except the
 ones connected to network B.
@@ -180,17 +166,12 @@ interface F0/1
 mpls ip
 interface F1/1
 mpls ip
-interface Loopback0
-mpls ip
 end 
 write    
 
 
 conf t
 router bgp 1000
-bgp router-id ???
-neighbor 10.4.0.254 255.255.255.255 remote-as 1000
-neighbor 10.4.0.254 update-source Loopback0
 address-family vpnv4
 neighbor 10.4.0.254 activate
 neighbor 10.4.0.254 send-community both
