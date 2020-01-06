@@ -4,6 +4,7 @@
     conf t
     interface F0/0
 	ip address 192.100.1.58 255.255.255.252
+	ipv6 address 2001:100:1:1::2/64
 	no shut
 	end
 	write
@@ -65,6 +66,14 @@ ip policy route-map ClientA
     conf t
     router ospf 1005
     network 192.100.1.52 0.0.0.3 area 0
+
+*** OSPF IPV6 ***
+    conf t 
+    ipv6 router ospf 1000
+    default-information originate always
+
+    interface f0/0
+    ipv6 ospf 1000 area 0
 
 
 

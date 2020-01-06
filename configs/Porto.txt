@@ -21,6 +21,7 @@ ipv6 unicast-routing
         conf t
         interface F0/1
         ip address 192.100.1.61 255.255.255.252
+        ipv6 address 2001:100:1:9::1/64
         no shut    
     
     *** F1/0 ***
@@ -42,6 +43,8 @@ ipv6 unicast-routing
         address-family ipv6 unicast
         neighbor 2001:4:4::2 remote-as 2000
         neighbor 2001:4:4::2 remove-private-as
+        neighbor 2001:100:1:9::2 remote-as 65000
+        
 
     *** iBGP ***
         conf t 
@@ -111,6 +114,9 @@ NOTE: This may be used for every AS1000 Border router.
     address-family ipv4 unicast
     neighbor 4.4.4.2 route-map routes-out out
 
+    address-family ipv6 unicast
+    neighbor 2001:4:4::2 route-map routes-out out
+
 *** Interior routing constrains *** 
 NOTE: This may be used for every AS1000 border router.
 Has to be set in
@@ -147,6 +153,14 @@ Has to be set in
     address-family ipv4 unicast
     neighbor 4.4.4.2 prefix-list y1netin in
 
+    conf t 
+    ipv6 prefix-list y1net6in seq 16 deny 2201:65:0::/48 le 128
+    ipv6 prefix-list y1net6in seq 100 permit ::/0 le 128
+
+    router bgp 1000
+    address-family ipv6 unicast
+    neighbor 2001:4:4::2 prefix-list y1net6in in 
+
 *** Stop announcing private networks *** 
     conf t
     ip prefix-list pOut-priv-default seq 10 deny 10.0.0.0/8 le 32
@@ -156,6 +170,7 @@ Has to be set in
     router bgp 1000
     address-family ipv4 unicast
     neighbor 4.4.4.2 prefix-list pOut-priv-default out
+    neighbor 192.100.1.62 prefix-list pOut-priv-default out
 
 
 *** Route Aggregations ***

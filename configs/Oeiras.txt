@@ -69,6 +69,17 @@
         neighbor 192.100.1.254 update-source Loopback0
         redistribute ospf 1004
 
+        address-family ipv6 unicast
+        neighbor 2001:100:1:1::1 remote-as 1000
+        neighbor 2001:100:1:1::1 next-hop-self
+        neighbor 2001:100:1:1::2 remote-as 1000
+        neighbor 2001:100:1:1::2 next-hop-self
+        neighbor 2001:100:1:1::4 remote-as 1000
+        neighbor 2001:100:1:1::4 next-hop-self
+        neighbor 2001:100:1:1::5 remote-as 1000
+        neighbor 2001:100:1:1::5 next-hop-self
+        redistribute ospf 1000
+
 *** OSPF Processes ***
 
     conf t
