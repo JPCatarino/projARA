@@ -1,0 +1,16 @@
+Jan 06 15:22:27.605 HYPERVISOR: Release 0.2.17-x86/Windows (tag 2017072410)
+Jan 06 15:22:27.605 HYPERVISOR: Started on IP = 127.0.0.1, TCP port = 57716.
+Jan 06 15:22:28.106 HYPERVISOR: exec_cmd: hypervisor version 
+Jan 06 15:22:28.106 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\Outro\projectos\projARA\projARAFinal\project-files\dynamips 
+Jan 06 15:22:28.106 GENERAL: working_dir=C:\Users\Outro\projectos\projARA\projARAFinal\project-files\dynamips
+Jan 06 15:22:28.106 HYPERVISOR: exec_cmd: ethsw create ICVigo 
+Jan 06 15:22:44.631 HYPERVISOR: exec_cmd: nio create_udp udp-8b803704-0340-42e8-a6c6-63fdbeb5ef57 10077 127.0.0.1 10076 
+Jan 06 15:22:44.631 HYPERVISOR: exec_cmd: ethsw add_nio ICVigo udp-8b803704-0340-42e8-a6c6-63fdbeb5ef57 
+Jan 06 15:22:44.647 HYPERVISOR: exec_cmd: ethsw set_access_port ICVigo udp-8b803704-0340-42e8-a6c6-63fdbeb5ef57 1 
+Jan 06 15:22:50.813 HYPERVISOR: exec_cmd: nio create_udp udp-72151138-5229-4a46-b45d-e3448d930ffb 10160 127.0.0.1 10161 
+Jan 06 15:22:50.813 HYPERVISOR: exec_cmd: ethsw add_nio ICVigo udp-72151138-5229-4a46-b45d-e3448d930ffb 
+Jan 06 15:22:50.845 HYPERVISOR: exec_cmd: ethsw set_access_port ICVigo udp-72151138-5229-4a46-b45d-e3448d930ffb 1 
+Jan 06 15:30:49.895 HYPERVISOR: exec_cmd: ethsw delete ICVigo 
+Jan 06 15:30:49.919 HYPERVISOR: exec_cmd: hypervisor stop 
+Jan 06 15:30:50.094 HYPERVISOR: Stopped.
+Jan 06 15:30:50.100 GENERAL: reset done.
